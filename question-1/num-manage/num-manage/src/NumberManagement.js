@@ -11,7 +11,7 @@ const NumberManagement = () => {
       setErrorMessage(""); // Clear any previous error messages
       const urlsArray = urls.split("\n").filter((url) => url);
 
-      // Ensure at least one URL is provided
+      
       if (urlsArray.length === 0) {
         setErrorMessage("Please provide at least one URL");
         setNumbers([]);
@@ -23,7 +23,7 @@ const NumberManagement = () => {
           .get(url)
           .then((response) => response.data)
           .catch((error) => {
-            // Handle Axios errors (e.g., timeout, 404)
+            
             console.error(`Error fetching data from ${url}: ${error}`);
             return [];
           })
